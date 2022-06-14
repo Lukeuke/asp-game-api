@@ -1,4 +1,5 @@
 ﻿using Application.DTO;
+using Application.Service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers;
@@ -10,9 +11,8 @@ public class InitializeController : ControllerBase
     [HttpPost]
     public InitializeDto Post(InitializeDto initializeDto)
     {
-        var rnd = new Random();
-        initializeDto.Id = rnd.Next(1, 100);
-
+        initializeDto.Id = 2; // TODO: Make a business logic
+        GameService.GetInstance().SomeBusinessMethod();
         return initializeDto;
     }
 }

@@ -8,8 +8,10 @@ namespace Application.Controllers;
 public class FinishController : ControllerBase
 {
     [HttpPost]
-    public FinishRequestDto Post(FinishRequestDto finishRequestDto)
+    public FinishResponseDto Post(FinishRequestDto finishRequestDto)
     {
-        return finishRequestDto;
+        Console.WriteLine($"{finishRequestDto.Id}, {finishRequestDto.Word}");
+        // TODO: Business logic with FinishRequestDto, Connection to Db
+        return new FinishResponseDto(); // For now its empty but here will return if player has won and bonus amount 
     }
 }
