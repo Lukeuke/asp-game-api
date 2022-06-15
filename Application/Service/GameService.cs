@@ -1,4 +1,6 @@
-﻿namespace Application.Service;
+﻿using Application.DTO;
+
+namespace Application.Service;
 
 public sealed class GameService
 {
@@ -14,5 +16,18 @@ public sealed class GameService
     public void SomeBusinessMethod()
     {
         Console.WriteLine("Method invoked");
+    }
+
+    public int GetIdFromDb(InitializeRequestDto initializeRequestDto)
+    {
+        var reqId = initializeRequestDto.Id;
+        var resId = 2; // TODO: Getting id from Db
+
+        return resId;
+    }
+
+    public bool CanPlay()
+    {
+        return true; // TODO: Make logic
     }
 }

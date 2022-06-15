@@ -9,10 +9,15 @@ namespace Application.Controllers;
 public class InitializeController : ControllerBase
 {
     [HttpPost]
-    public InitializeDto Post(InitializeDto initializeDto)
+    public InitializeResponseDto Post(InitializeRequestDto initializeRequestDto)
     {
-        initializeDto.Id = 2; // TODO: Make a business logic
+        initializeRequestDto.Id = GameService.GetInstance().GetIdFromDb(initializeRequestDto);
         GameService.GetInstance().SomeBusinessMethod();
-        return initializeDto;
+
+        return new InitializeResponseDto()
+        {
+            Id = initializeRequestDto.Id,
+            CanPlay = GameService.GetInstance().CanPlay()
+        };
     }
 }

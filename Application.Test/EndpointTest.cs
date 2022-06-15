@@ -15,14 +15,21 @@ public class EndpointTest
     public void InitializeController_Test()
     {
         var initializeController = new InitializeController();
-        var initializeDto = new InitializeDto()
+        var initializeDto = new InitializeRequestDto()
         {
             Id = 2
         };
 
+        var expectedInitializeResponseDto = new InitializeResponseDto()
+        {
+            Id = 2,
+            CanPlay = true
+        };
+
         var result = initializeController.Post(initializeDto);
         
-        Assert.AreEqual(initializeDto, result);
+        Assert.AreEqual(expectedInitializeResponseDto.Id, result.Id);
+        Assert.AreEqual(expectedInitializeResponseDto.CanPlay, result.CanPlay);
     }
 
     [Test]

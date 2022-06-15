@@ -1,6 +1,6 @@
 ﻿namespace Application.DTO;
 
-public class InitializeDto
+public class InitializeRequestDto
 {
     public int Id { get; set; }
 }
