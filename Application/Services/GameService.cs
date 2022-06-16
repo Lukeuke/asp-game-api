@@ -1,6 +1,6 @@
 ﻿using Application.DTO;
 
-namespace Application.Service;
+namespace Application.Services;
 
 public sealed class GameService
 {

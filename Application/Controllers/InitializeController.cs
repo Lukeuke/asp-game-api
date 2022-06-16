@@ -1,5 +1,5 @@
 ﻿using Application.DTO;
-using Application.Service;
+using Application.Services;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers;

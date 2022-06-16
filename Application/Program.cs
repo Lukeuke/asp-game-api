@@ -1,9 +1,13 @@
 using Application.Models;
 using Application.PlayerData;
-using Application.Service;
+using Application.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var settings = new Settings();
+builder.Configuration.Bind("Settings", settings);
+builder.Services.AddSingleton(settings);
 
 // Add services to the container.
 
