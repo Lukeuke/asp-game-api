@@ -22,7 +22,7 @@ public class PlayerController : ControllerBase
     }
     
     [HttpGet]
-    [Route("/players/{id}")]
+    [Route("/player/{id}")]
     public IActionResult GetPlayer(Guid id)
     {
         var player = _playerData.GetPlayer(id);

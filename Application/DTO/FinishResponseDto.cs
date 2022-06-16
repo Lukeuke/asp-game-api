@@ -1,4 +1,4 @@
-﻿namespace Application.Controllers;
+﻿namespace Application.DTO;
 
 public class FinishResponseDto
 {

@@ -1,5 +1,7 @@
+using Application.Models;
 using Application.PlayerData;
 using Application.Service;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,7 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddScoped<GameService>();
-builder.Services.AddSingleton<IPlayerData, MockPlayerData>();
+
+builder.Services.AddDbContextPool<PlayerContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("GuessWordConnectionString")));
+
+builder.Services.AddScoped<IPlayerData, PlayerData>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
