@@ -11,4 +11,5 @@ public class Player
     public string Name { get; set; }
 
     public string Password { get; set; }
+    public string Salt { get; set; }
 }

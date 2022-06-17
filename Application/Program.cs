@@ -17,6 +17,7 @@ builder.Services.AddScoped<GameService>();
 builder.Services.AddDbContextPool<PlayerContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("GuessWordConnectionString")));
 
 builder.Services.AddScoped<IPlayerData, PlayerData>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
