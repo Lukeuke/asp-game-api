@@ -34,7 +34,7 @@ public class PlayerController : ControllerBase
     }
 
     [HttpPost]
-    [Route("/register")]
+    [Route("/player/add")]
     public IActionResult AddPlayer(Player player)
     {
         _playerData.CreatePlayer(player);

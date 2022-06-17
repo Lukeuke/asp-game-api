@@ -31,6 +31,7 @@ public class AuthenticationController : ControllerBase
     [HttpPost("login")]
     public IActionResult Login(AuthenticationRequestDto requestDto)
     {
+        Console.WriteLine($"{requestDto.Password}, {requestDto.Username}");
         var (success, content) = _authenticationService.Login(requestDto.Username, requestDto.Password);
         
         if (!success)

@@ -1,4 +1,5 @@
 ﻿using Application.DTO;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers;
@@ -8,6 +9,7 @@ namespace Application.Controllers;
 public class FinishController : ControllerBase
 {
     [HttpPost]
+    [Authorize]
     public FinishResponseDto Post(FinishRequestDto finishRequestDto)
     {
         Console.WriteLine($"{finishRequestDto.Id}, {finishRequestDto.Word}");
