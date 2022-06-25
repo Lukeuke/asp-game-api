@@ -10,10 +10,12 @@ namespace Application.Controllers;
 public class FinishController : ControllerBase
 {
     private readonly IWordProviderService _wordProviderService;
+    private readonly IFinishService _finishService;
 
-    public FinishController(IWordProviderService wordProviderService)
+    public FinishController(IWordProviderService wordProviderService, IFinishService finishService)
     {
         _wordProviderService = wordProviderService;
+        _finishService = finishService;
     }
     
     [HttpPost]
@@ -26,6 +28,8 @@ public class FinishController : ControllerBase
         
         if (finishRequestDto.Word.Equals(_wordProviderService.GetWord()))
         {
+            _finishService.AddToDb(finishRequestDto);
+            
             return new FinishResponseDto()
             {
                 Won = true,

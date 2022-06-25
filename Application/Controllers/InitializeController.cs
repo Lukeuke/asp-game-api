@@ -27,13 +27,12 @@ public class InitializeController : ControllerBase
         var player = _playerContext.Players.FirstOrDefault(x => x.Name == initializeRequestDto.Name);
 
         GameService.GetInstance().SomeBusinessMethod();
-
-        // TODO: Make logic
+  
         return new InitializeResponseDto()
         {
             Id = player.Id,
-            WonCount = 2,
-            TotalMoneyWon = 100,
+            WonCount = player.WonCount,
+            TotalMoneyWon = player.TotalMoneyWon,
             CanPlay = GameService.GetInstance().CanPlay()
         };
     }

@@ -11,7 +11,7 @@ public class WordProviderService : IWordProviderService
 
     private List<string> _words = new List<string>()
     {
-        "burak", ""
+        "burak", "wawel"
     };
 
     /*public async Task GetWordFromApi()

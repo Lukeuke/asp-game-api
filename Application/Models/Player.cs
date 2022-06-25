@@ -12,4 +12,6 @@ public class Player
 
     public string Password { get; set; }
     public string Salt { get; set; }
+    public int WonCount { get; set; }
+    public int TotalMoneyWon {get; set; }
 }
