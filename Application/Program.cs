@@ -21,6 +21,7 @@ builder.Services.AddDbContextPool<PlayerContext>(o => o.UseSqlServer(builder.Con
 
 builder.Services.AddScoped<IPlayerData, PlayerData>();
 builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IWordProviderService, WordProviderService>();
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
 {

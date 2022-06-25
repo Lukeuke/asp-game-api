@@ -1,11 +1,18 @@
+using System;
 using Application.Controllers;
 using Application.DTO;
+using Application.Models;
+using Application.Services;
 using NUnit.Framework;
 
 namespace Application.Test;
 
 public class EndpointTest
 {
+    private readonly WordProviderService _wordProviderService = new WordProviderService();
+    private readonly MockWordProvider _mockWordProvider = new MockWordProvider();
+    private readonly PlayerContext _playerContext;
+
     [SetUp]
     public void Setup()
     {
@@ -14,15 +21,17 @@ public class EndpointTest
     [Test]
     public void InitializeController_Test()
     {
-        var initializeController = new InitializeController();
+        var id = Guid.NewGuid();
+        
+        var initializeController = new InitializeController(_playerContext);
         var initializeDto = new InitializeRequestDto()
         {
-            Id = 2
+            Id = id
         };
 
         var expectedInitializeResponseDto = new InitializeResponseDto()
         {
-            Id = 2,
+            Id = id,
             CanPlay = true
         };
 
@@ -35,17 +44,19 @@ public class EndpointTest
     [Test]
     public void FinishController_Test()
     {
-        var finishController = new FinishController();
+        var id = Guid.NewGuid();
+        
+        var finishController = new MockFinishController(_mockWordProvider);
         var finishRequestDto = new FinishRequestDto()
         {
-            Id = 1,
-            Word = "sample"
+            Id = id,
+            Word = _mockWordProvider.GetWord()
         };
 
         var expectedFinishResponseDto = new FinishResponseDto()
         {
-            Won = false, // TODO: change this when will be some business logic 
-            Bonus = 0
+            Won = true,
+            Bonus = 100
         };
 
         var result = finishController.Post(finishRequestDto);

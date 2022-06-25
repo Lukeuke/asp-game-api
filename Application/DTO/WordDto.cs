@@ -1,7 +1,6 @@
 ﻿namespace Application.DTO;
 
-public class FinishRequestDto
+public class WordDto
 {
-    public Guid Id { get; set; }
     public string Word { get; set; }
 }

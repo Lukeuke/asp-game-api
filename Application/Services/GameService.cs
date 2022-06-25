@@ -17,15 +17,7 @@ public sealed class GameService
     {
         Console.WriteLine("Method invoked");
     }
-
-    public int GetIdFromDb(InitializeRequestDto initializeRequestDto)
-    {
-        var reqId = initializeRequestDto.Id;
-        var resId = 2; // TODO: Getting id from Db
-
-        return resId;
-    }
-
+    
     public bool CanPlay()
     {
         return true; // TODO: Make logic

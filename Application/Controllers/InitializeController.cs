@@ -1,4 +1,5 @@
 ﻿using Application.DTO;
+using Application.Models;
 using Application.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,16 +10,28 @@ namespace Application.Controllers;
 [Route("/initialize")]
 public class InitializeController : ControllerBase
 {
+    private readonly PlayerContext _playerContext;
+
+    public InitializeController(PlayerContext playerContext)
+    {
+        _playerContext = playerContext;
+    }
+    
     [HttpPost]
     [Authorize]
     public InitializeResponseDto Post(InitializeRequestDto initializeRequestDto)
     {
-        initializeRequestDto.Id = GameService.GetInstance().GetIdFromDb(initializeRequestDto);
+        Console.WriteLine("Id: " + initializeRequestDto.Id);
+
+        // Getting id from Db based on requested username
+        var player = _playerContext.Players.FirstOrDefault(x => x.Name == initializeRequestDto.Name);
+
         GameService.GetInstance().SomeBusinessMethod();
 
+        // TODO: Make logic
         return new InitializeResponseDto()
         {
-            Id = initializeRequestDto.Id,
+            Id = player.Id,
             WonCount = 2,
             TotalMoneyWon = 100,
             CanPlay = GameService.GetInstance().CanPlay()

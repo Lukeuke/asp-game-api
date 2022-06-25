@@ -1,30 +1,26 @@
 ﻿using Application.DTO;
 using Application.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Application.Controllers;
 
-[ApiController]
-[Route("/finish")]
-public class FinishController : ControllerBase
+public class MockFinishController : ControllerBase
 {
-    private readonly IWordProviderService _wordProviderService;
+    private readonly MockWordProvider _mockWordProvider;
 
-    public FinishController(IWordProviderService wordProviderService)
+    public MockFinishController(MockWordProvider wordProviderService)
     {
-        _wordProviderService = wordProviderService;
+        _mockWordProvider = wordProviderService;
     }
     
     [HttpPost]
-    [Authorize]
     public FinishResponseDto Post(FinishRequestDto finishRequestDto)
     {
         Console.WriteLine($"{finishRequestDto.Id}, {finishRequestDto.Word}");
 
-        _wordProviderService.GetWord();
+        _mockWordProvider.GetWord();
         
-        if (finishRequestDto.Word.Equals(_wordProviderService.GetWord()))
+        if (finishRequestDto.Word.Equals(_mockWordProvider.GetWord()))
         {
             return new FinishResponseDto()
             {
