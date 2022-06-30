@@ -1,6 +1,4 @@
-﻿using Application.DTO;
-
-namespace Application.Services;
+﻿namespace Application.Services;
 
 public sealed class GameService
 {
@@ -8,6 +6,16 @@ public sealed class GameService
 
     private static GameService? _instance;
 
+    public string Word { get; }
+
+    private readonly WordProviderService _wordProviderService = new ();
+
+    public GameService()
+    {
+       var word = _wordProviderService.GetWordFromApi();
+       Word = word.Result;
+    }
+    
     public static GameService GetInstance()
     {
         return _instance ??= new GameService();
@@ -16,10 +24,5 @@ public sealed class GameService
     public void SomeBusinessMethod()
     {
         Console.WriteLine("Method invoked");
-    }
-    
-    public bool CanPlay()
-    {
-        return true; // TODO: Make logic
     }
 }

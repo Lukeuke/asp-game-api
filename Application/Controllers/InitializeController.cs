@@ -33,7 +33,7 @@ public class InitializeController : ControllerBase
             Id = player.Id,
             WonCount = player.WonCount,
             TotalMoneyWon = player.TotalMoneyWon,
-            CanPlay = GameService.GetInstance().CanPlay()
+            CanPlay = true
         };
     }
 }

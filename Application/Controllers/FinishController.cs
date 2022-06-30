@@ -24,9 +24,9 @@ public class FinishController : ControllerBase
     {
         Console.WriteLine($"{finishRequestDto.Id}, {finishRequestDto.Word}");
 
-        _wordProviderService.GetWord();
+        var word = GameService.GetInstance().Word;
         
-        if (finishRequestDto.Word.Equals(_wordProviderService.GetWord()))
+        if (finishRequestDto.Word.Equals(word))
         {
             _finishService.AddToDb(finishRequestDto);
             
