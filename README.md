@@ -1,1 +1,2 @@
-# asp-game-api
+# GuessWord Game Server
+### Finished working MVP
