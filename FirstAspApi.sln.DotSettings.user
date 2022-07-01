@@ -1,17 +1,20 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/PencilsConfiguration/ActualSeverity/@EntryValue">INFO</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=49fbf887_002D3e30_002D4f46_002Da6d5_002Dca05ed0da740/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=49fbf887_002D3e30_002D4f46_002Da6d5_002Dca05ed0da740/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Test1" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.EndpointTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.PlayerDataTest.GetAllPlayers_Test&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.PlayerDataTest.CreatePlayer_Test&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.PlayerDataTest.GetOnePlayer_Test&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.PlayerDataTest.DeletePlayer_Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.GameServiceTest.GetWord_Test&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=93c813a7_002D03e3_002D4e94_002Dbe44_002D67c5c2233d8a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="CreatePlayer_Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=93c813a7_002D03e3_002D4e94_002Dbe44_002D67c5c2233d8a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="CreatePlayer_Test" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.PlayerDataTest.CreatePlayer_Test&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.EndpointTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.GameServiceTest.GetWord_Test&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;NUnit3x::C0B2900F-28E8-41BA-8F04-47F2832F407D::net6.0::Application.Test.GameServiceTest.CheckForWord_Test&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
