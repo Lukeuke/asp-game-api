@@ -26,17 +26,22 @@ public class FinishController : ControllerBase
 
         var word = GameService.GetInstance().Word;
         
+        var wrongLetters = GameService.GetInstance().CheckForWord(finishRequestDto.Word);
+        
         if (finishRequestDto.Word.Equals(word))
         {
             _finishService.AddToDb(finishRequestDto);
             
+            GameService.GetInstance().GetNewWord();
+            
             return new FinishResponseDto()
             {
                 Won = true,
-                Bonus = 100
+                Bonus = 100,
+                WrongLetters = null
             };
         }
         
-        return new FinishResponseDto();
+        return new FinishResponseDto() { WrongLetters = wrongLetters };
     }
 }

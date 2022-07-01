@@ -4,8 +4,6 @@ namespace Application.Services;
 
 public class WordProviderService : IWordProviderService
 {
-    private string _wordToGuess = "";
-    
     private const string Url = "https://random-word-api.herokuapp.com/word?length=5";
     
     public async Task<string> GetWordFromApi()
@@ -16,15 +14,8 @@ public class WordProviderService : IWordProviderService
         
         var word = JsonConvert.DeserializeObject<List<string>>(json);
 
-        _wordToGuess = word[0];
+        Console.WriteLine(word[0]);
         
-        Console.WriteLine(_wordToGuess);
-
-        return _wordToGuess;
-    }
-
-    public string GetWord()
-    {
-        return _wordToGuess;
+        return word[0];
     }
 }

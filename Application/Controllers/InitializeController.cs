@@ -27,7 +27,8 @@ public class InitializeController : ControllerBase
         var player = _playerContext.Players.FirstOrDefault(x => x.Name == initializeRequestDto.Name);
 
         GameService.GetInstance().SomeBusinessMethod();
-  
+        GameService.GetInstance().GetNewWord();
+
         return new InitializeResponseDto()
         {
             Id = player.Id,

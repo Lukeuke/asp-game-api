@@ -3,5 +3,4 @@
 public interface IWordProviderService
 { 
     Task<string> GetWordFromApi();
-    string GetWord();
 }
