@@ -34,11 +34,6 @@ docker run -p 8080:80 guesswordapi
 dotnet ef database update
 ```
 
-- if there are not migrations just add one
-```bash
-dotnet ef migrations add <name_of_migration>
-```
-- and then update Db
 - after this you can run this application
 ```bash
 dotnet run
